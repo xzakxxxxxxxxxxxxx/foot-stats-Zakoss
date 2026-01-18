@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginBox" class="admin-box">
+  <h2>🔒 Connexion admin</h2>
+
+  <form onsubmit="loginAdmin(event)">
+    <input type="password" id="adminPassword" placeholder="Code admin" required>
+    <button type="submit">Connexion</button>
+  </form>
+
+  <p id="error" class="error"></p>
+</div>
+
+<!-- PANEL ADMIN -->
+<div id="adminPanel" class="admin-panel hidden">
+  <h2>⚙️ Admin</h2>
+
+  <!-- AJOUT JOUEUR -->
+  <div class="admin-card">
+    <h3>➕ Ajouter un joueur</h3>
+
+    <form id="addPlayerForm" onsubmit="handleAddPlayer(event)">
+      <label>Nom</label>
+      <input type="text" id="newName" placeholder="Ex: Yassine" required>
+
+      <label>Poste</label>
+      <input type="text" id="newRole" placeholder="Ex: Milieu" required>
+
+      <label>Photo (optionnel)</label>
+      <input type="file" id="newPhotoFile" accept="image/*">
+
+      <button type="submit">Ajouter</button>
+      <p id="addPlayerMsg" class="hint"></p>
+    </form>
+  </div>
+
+  <!-- LISTE JOUEURS (pour vérifier) -->
+  <div class="admin-card">
+    <h3>📋 Joueurs enregistrés</h3>
+    <div id="adminPlayersList"></div>
+  </div>
+
+  <button class="logout-btn" onclick="logoutAdmin()">Se déconnecter</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+  // Si tu es déjà connecté, on ouvre direct le panel
+  if (sessionStorage.getItem("isAdmin") === "true") {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("adminPanel").classList.remove("hidden");
+    renderAdminPlayersList();
+  }
+</script>
+
+<button class="back-home-btn" onclick="window.location.href='index.html'">
+  ⬅️ Retour à l’accueil
+</button>
+
+
+
+</body>
+</html>

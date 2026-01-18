@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matchs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>⚽ Matchs</h1>
+</header>
+
+<div class="create-match">
+  <button class="create-btn" type="button" onclick="toggleForm()">➕ Créer un match</button>
+</div>
+
+<form id="matchForm" class="match-form" style="display:none;" onsubmit="createMatch(event)">
+
+  <label>Nom équipe A</label>
+  <input type="text" id="teamA" required>
+
+  <label>Joueurs équipe A</label>
+  <div id="teamAPlayers" class="player-pick"></div>
+
+  <label>Nom équipe B</label>
+  <input type="text" id="teamB" required>
+
+  <label>Joueurs équipe B</label>
+  <div id="teamBPlayers" class="player-pick"></div>
+
+  <label>Score équipe A</label>
+  <input type="number" id="scoreA" min="0" required>
+
+  <label>Score équipe B</label>
+  <input type="number" id="scoreB" min="0" required>
+
+  <div class="events-head">
+    <label>⚽ Buts (buteur + passeur optionnel)</label>
+    <button class="small-btn" type="button" onclick="addGoalRow()">+ Ajouter un but</button>
+  </div>
+
+  <div id="goalsList" class="goals-list"></div>
+
+  <button type="submit" class="create-btn">Valider le match</button>
+</form>
+
+<div id="matchesList" class="matches"></div>
+
+<nav class="bottom-nav">
+  <a href="index.html">🏠</a>
+  <a href="classement.html">🏆</a>
+  <a href="matchs.html" class="active">⚽</a>
+  <a href="joueurs.html">👤</a>
+</nav>
+
+<script src="script.js"></script>
+<script>
+  initMatchForm();
+  if (document.getElementById("matchesList")) displayMatches();
+</script>
+
+</body>
+</html>

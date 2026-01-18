@@ -1,0 +1,687 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #0f172a, #020617);
+    color: white;
+    padding-bottom: 80px;
+}
+
+/* HEADER */
+.header {
+    padding: 20px;
+    font-size: 20px;
+}
+
+/* SWITCH */
+.switch {
+    display: flex;
+    margin: 0 20px 20px;
+    background-color: #020617;
+    border-radius: 14px;
+    padding: 5px;
+}
+
+.switch button {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.switch .active {
+    background-color: #22c55e;
+    color: black;
+    font-weight: bold;
+}
+
+/* CLASSEMENT */
+a, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.ranking {
+    padding: 0 20px;
+}
+
+.player-card {
+    background-color: #020617;
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: white;
+    text-decoration:none
+}
+.player-card:active {
+  transform: scale(0.99);
+  opacity: 0.95;
+}
+
+.rank {
+    color: #22c55e;
+    font-weight: bold;
+    width: 40px;
+}
+
+.info {
+    flex: 1;
+}
+
+.info strong {
+    display: block;
+}
+
+.info small {
+    color: #94a3b8;
+}
+
+.stat {
+    font-size: 22px;
+    font-weight: bold;
+    color: #22c55e;
+}
+
+/* NAV BAR */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #020617;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+}
+
+.bottom-nav a {
+    font-size: 22px;
+    color: #64748b;
+}
+
+.bottom-nav .active {
+    color: #22c55e;
+}
+/* MATCHS */
+.create-match {
+    padding: 0 20px 20px;
+}
+
+.create-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #22c55e;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.matches {
+    padding: 0 20px;
+}
+
+.match-card {
+    background-color: #020617;
+    border-radius: 18px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.date {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.team {
+    text-align: center;
+}
+
+.team span {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    color: #e5e7eb;
+}
+
+
+.team strong {
+    font-size: 28px;
+}
+
+.vs {
+    color: #64748b;
+    font-size: 40px;
+}
+
+.players {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.match-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.match-form input {
+    background-color: #020617;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    color: white;
+}
+
+.match-form input:focus {
+    outline: 2px solid #22c55e;
+}
+
+.delete-btn {
+    margin-top: 10px;
+    background-color: #7f1d1d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 13px;
+}
+
+.delete-btn:active {
+    background-color: #991b1b;
+}
+
+
+
+/* ACCUEIL */
+.subtitle {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.home-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.action-card {
+    background-color: #020617;
+    width: 90px;
+    height: 90px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    gap: 6px;
+}
+
+.action-card span {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.home-section {
+    padding: 0 20px 20px;
+}
+
+.home-section h2 {
+    margin-bottom: 12px;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+/* JOUEURS */
+/* 🔒 BASE MOBILE SAFE */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* 👤 JOUEURS */
+.players-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+}
+
+/* carte joueur */
+.player-line {
+    width: 100%;
+    max-width: 100%;
+
+    background-color: #020617;
+    border-radius: 18px;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    color: white;
+
+    overflow: hidden;
+}
+
+/* photo */
+.player-line img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #22c55e;
+}
+
+/* infos texte */
+.player-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.player-info strong {
+    display: block;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-info small {
+    color: #94a3b8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* flèche */
+.arrow {
+    font-size: 22px;
+    color: #64748b;
+    flex-shrink: 0;
+}
+
+/* 🔒 ADMIN */
+.admin-box, .admin-panel {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #020617;
+    padding: 20px;
+    border-radius: 16px;
+    color: white;
+}
+
+.admin-box input,
+.admin-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: none;
+    background: #0f172a;
+    color: white;
+}
+
+.admin-box button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    background: #22c55e;
+    color: black;
+    font-weight: bold;
+}
+
+.admin-card {
+    background: #020617;
+    padding: 15px;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #0f172a;
+}
+
+.admin-card label {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    color: #ef4444;
+    margin-top: 10px;
+}
+/* 👤 PROFIL */
+.profile-card {
+    max-width: 420px;
+    margin: 30px auto;
+    background: #020617;
+    padding: 20px;
+    border-radius: 18px;
+    color: white;
+    text-align: center;
+}
+
+.profile-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #22c55e;
+    margin-bottom: 10px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.stats div {
+    background: #0f172a;
+    border-radius: 14px;
+    padding: 10px;
+}
+
+.edit-btn, .save-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 14px;
+    border: none;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.edit-btn {
+    background: #22c55e;
+    color: black;
+}
+
+.save-btn {
+    background: #3b82f6;
+    color: white;
+}
+.admin-box, .admin-panel {
+  max-width: 420px;
+  margin: 30px auto;
+  background: #020617;
+  padding: 20px;
+  border-radius: 18px;
+  color: white;
+}
+
+.admin-box input, .admin-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 12px;
+  border: none;
+  background: #0f172a;
+  color: white;
+}
+
+.admin-box button, .admin-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: #22c55e;
+  color: black;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.admin-card {
+  background: #020617;
+  padding: 15px;
+  border-radius: 16px;
+  margin: 15px 0;
+  border: 1px solid #0f172a;
+}
+
+.hidden { display: none; }
+
+.error { color: #ef4444; margin-top: 10px; }
+.hint { color: #94a3b8; margin-top: 8px; font-size: 13px; }
+
+.logout-btn{
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: #7f1d1d;
+  color: white;
+  font-weight: bold;
+}
+/* 🔙 BOUTON RETOUR ACCUEIL */
+.back-home-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #22c55e;
+
+  border: 1px solid #22c55e;
+  border-radius: 16px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition: all 0.25s ease;
+}
+
+/* effet app mobile */
+.back-home-btn:active {
+  transform: scale(0.97);
+  background: #020617;
+}
+
+/* hover (utile PC) */
+.back-home-btn:hover {
+  background: #020617;
+}
+.admin-player-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #020617;
+  padding: 12px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+}
+
+.admin-player-info small {
+  color: #94a3b8;
+}
+
+.admin-player-line button {
+  background: #22c55e;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 16px;
+}
+.player-pick{
+  background:#020617;
+  border-radius:14px;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.pick-line{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:white;
+}
+
+.pick-line input{
+  width:18px;
+  height:18px;
+}
+
+.events-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:6px;
+}
+
+.small-btn{
+  background:#0f172a;
+  border:1px solid #22c55e;
+  color:#22c55e;
+  padding:8px 10px;
+  border-radius:12px;
+  font-weight:700;
+}
+
+.goals-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.goal-row{
+  background:#020617;
+  border-radius:14px;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.goal-row .row{
+  display:flex;
+  gap:10px;
+}
+
+.goal-row select{
+  flex:1;
+  background:#0f172a;
+  border:none;
+  color:white;
+  padding:10px;
+  border-radius:12px;
+}
+
+.remove-btn{
+  background:#7f1d1d;
+  border:none;
+  color:white;
+  padding:8px 10px;
+  border-radius:12px;
+  font-weight:700;
+}
+/* ✅ NOM DES JOUEURS (classement + accueil + profils) */
+.info strong,
+.player-info strong,
+#homeTop strong,
+#homeTop .name {
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+}
+
+/* ✅ texte secondaire sous le nom (ex: "9 matchs") */
+.info small,
+.player-info small,
+#homeTop small {
+  font-size: 14px !important;
+}
+.top-label{
+  color:#94a3b8;
+  font-size:14px;
+  font-weight:700;
+}
+
+.top-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:6px;
+}
+
+.top-name{
+  font-size:18px;
+  font-weight:900;
+}
+
+.top-value{
+  font-size:18px;
+  font-weight:900;
+  color:#22c55e;
+}
+/* ✅ CARD GLOBAL (accueil / top / etc.) */
+.card{
+  background-color:#020617;
+  border-radius:18px;
+  padding:15px;
+  margin: 12px 20px;
+  border: 1px solid #0f172a;
+}
+/* ✅ top buteur / passeur : alignement */
+.top-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.top-name{
+  font-size:18px;
+  font-weight:900;
+}
+
+.top-value{
+  font-size:18px;
+  font-weight:900;
+  color:#22c55e;
+}
+
+.top-label{
+  color:#94a3b8;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:6px;
+}

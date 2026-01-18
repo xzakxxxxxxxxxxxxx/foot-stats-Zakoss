@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>🏆 Classement</h1>
+</header>
+
+<!-- SWITCH (2 boutons) -->
+<div class="switch">
+  <button id="btn-buteurs" class="active" type="button" onclick="showGoals()">⚽ Buteurs</button>
+  <button id="btn-passeurs" type="button" onclick="showAssists()">🎯 Passeurs</button>
+</div>
+
+<!-- UN SEUL CONTAINER POUR LE CLASSEMENT -->
+<div id="ranking" class="ranking"></div>
+
+<!-- NAV BAR -->
+<nav class="bottom-nav">
+  <a href="index.html">🏠</a>
+  <a href="classement.html" class="active">🏆</a>
+  <a href="matchs.html">⚽</a>
+  <a href="joueurs.html">👤</a>
+</nav>
+
+<script src="script.js"></script>
+<script>
+  showGoals(); // afficher buteurs par défaut
+</script>
+
+</body>
+</html>
